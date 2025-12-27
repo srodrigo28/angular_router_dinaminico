@@ -9,9 +9,15 @@ import { Observable } from 'rxjs';
 export class UserDetailsService {
     private readonly _http = inject(HttpClient);
 
-    getUserPosts(userId: string): Observable<IUser[]> {
-        return this._http.get<IUser[]>('https://jsonplaceholder.typicode.com/users/'+userId);
+  private readonly url = 'https://jsonplaceholder.typicode.com/users/';
+
+    getUser(userId: string): Observable<IUser[]> {
+        return this._http.get<IUser[]>(this.url + userId);
     }
+
+    getOneUsers(): Observable<IUser[]> {
+        return this._http.get<IUser[]>(this.url.slice(0, -1));
+      }
 }
 
 export interface IUser {

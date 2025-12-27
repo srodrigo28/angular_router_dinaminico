@@ -9,11 +9,12 @@ import { Observable } from 'rxjs';
 export class UsersService {
   private readonly _http = inject(HttpClient);
 
-  private readonly url = 'https://jsonplaceholder.typicode.com/users';
+  private readonly url = 'https://jsonplaceholder.typicode.com/users/1';
 
   getUsers(): Observable<IUser[]> {
     return this._http.get<IUser[]>(this.url);
   }
+  
 }
 
 export interface IUser {

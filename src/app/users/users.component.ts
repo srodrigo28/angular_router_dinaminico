@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './users.component.html',
   styleUrl: './users.component.scss'
 })
+
 export class UsersComponent implements OnInit {
   usersList$: Observable<IUser[]> = of([]);
 
@@ -19,4 +20,5 @@ export class UsersComponent implements OnInit {
   ngOnInit(){
     this.usersList$ = this._userService.getUsers();
   }
+
 }

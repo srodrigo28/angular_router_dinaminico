@@ -1,0 +1,11 @@
+<div class="container">
+    
+    <a href="/" class="btn-voltar"> Voltar </a>
+
+    @for(post of postsList$ | async; track post; ) {
+    <div class="container-post">
+        <h2 class="title-post">{{ post.title }}</h2>
+        <p class="post-body">{{ post.body }}</p>
+    </div>
+    }
+</div>

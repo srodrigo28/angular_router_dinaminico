@@ -1,0 +1,39 @@
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.btn-voltar{
+    top: 20px; left: 20px;
+    position: sticky;
+    margin-bottom: 10px;
+    width: fit-content;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 17px;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+    background-color: red;
+}
+.container-post{
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+.title-post{
+    font-size: 22px;
+    font-weight: 500;
+}
+.post-body{
+    font-size: 18px;
+    font-style: italic;
+    text-align: justify;
+}

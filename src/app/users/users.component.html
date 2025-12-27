@@ -1,0 +1,9 @@
+<br> <br>
+@for( user of usersList$ | async; track user ) {
+<div class="container">        
+        <div [routerLink]="['/posts', user.id]" class="btn-user" >
+            <!-- <div> Id: {{ user.id }} </div> -->
+            <div>Name: {{ user.name }}</div>
+        </div>
+    </div>
+}

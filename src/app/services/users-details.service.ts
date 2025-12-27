@@ -6,51 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class UsersServiceDetalhes {
-  private readonly _http = inject(HttpClient);
+export class UserDetailsService {
+    private readonly _http = inject(HttpClient);
 
-  private readonly url = 'https://jsonplaceholder.typicode.com/users';
-
-  getUsers(): Observable<IUserDetalhes[]> {
-    return this._http.get<IUserDetalhes[]>(this.url);
-  }
+    getUserPosts(userId: string): Observable<IUser[]> {
+        return this._http.get<IUser[]>('https://jsonplaceholder.typicode.com/users/'+userId);
+    }
 }
 
-export interface IUserDetalhes {
-  id: number
-  name: string
-  username: string
-  email: string
-}
-
-/** outros
 export interface IUser {
   id: number
   name: string
   username: string
   email: string
-  address: Address
-  phone: string
-  website: string
-  company: Company
 }
-
-export interface Address {
-  street: string
-  suite: string
-  city: string
-  zipcode: string
-  geo: Geo
-}
-
-export interface Geo {
-  lat: string
-  lng: string
-}
-
-export interface Company {
-  name: string
-  catchPhrase: string
-  bs: string
-}
-*/
